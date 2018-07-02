@@ -2,6 +2,9 @@
 #santo tomas rancagua
 from funciones import *
 apro = inicio()
+base_inicial_produ()
+base_inicial_prove()
+
 while (apro == True):
     print(" ")
     print("     Menu Principal")

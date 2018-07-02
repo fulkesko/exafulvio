@@ -5,6 +5,7 @@ sesion = list()
 productos = list()
 provee = list()
 
+#bases iniciales
 def base_inicial_produ():
     proc = dict()
     n_cod = 1
@@ -23,12 +24,54 @@ def base_inicial_produ():
     proc = dict()
     n_cod += 1
     proc['cod'] = "cod_"+str(n_cod)
+    proc['nom'] = "JJRC H20"
+    proc['cate'] = "drone"
+    proc['mar'] = "JJRC"
+    proc['mode'] = "H20"
+    proc['from'] = "Asia"
+    proc['prec'] = 150000
+    proc['cant'] = 7
+    proc['prov'] = "JianJian"
 
+    productos.append(proc)
 
+    proc = dict()
+    n_cod += 1
+    proc['cod'] = "cod"+str(n_cod)
+    proc['nom'] = "Canon T6"
+    proc['cate'] = "camara"
+    proc['mar'] = "Canon"
+    proc['mode'] = "T6"
+    proc['from'] = "America"
+    proc['prec'] = 449990
+    proc['cant'] = 9
+    proc['prov'] = "Falabella"
 
+    productos.append(proc)
 
+def base_inicial_prove():
+    prov = dict()
+    code = 1
+    prov['cod'] = "Prove_"+str(code)
+    prov['nom'] = "Fulvio"
+    prov['pai'] = "Chile"
+    prov['dir'] = "Vivanco #1387"
+    prov['tel'] = "+56942200288"
+    prov['cor'] = "torentk@live.com"
 
+    provee.append(prov)
 
+    prov = dict()
+    code +=1
+    prov['cod'] = "Prove_"+str(code)
+    prov['nom'] = "Lucas"
+    prov['pai'] = "Chile"
+    prov['dir'] = "Ventisquero palomo"
+    prov['tel'] = "+56962003748"
+    prov['cor'] = "lucastoroecheverria@gmail.com"
+
+    provee.append(prov)
+#bases iniciales
 
 #menu listo, revisar art attack
 def menu_principal():
@@ -37,8 +80,10 @@ def menu_principal():
     print("c.   Registrar Producto Electrónico")
     print("d.   Listar Proveedores")
     print("e.   Listar Producto Electrónico")
-    opc = s_input("opcion: ")
+    opc = s_input("opcion: ").lower().strip()
     return opc
+
+
 #usuarios listo... analizar opcion de ingresar uno nuevo
 def usuarios():
     usu_cla = dict()
@@ -47,6 +92,7 @@ def usuarios():
     sesion.append(usu_cla)
 #-------------------------------------------
 #mejorar el registro de inicio de sesion
+
 def nombre():
     usuarios()
     for x in sesion:
@@ -71,13 +117,16 @@ def inicio(): #mejorar pero sirve de beta1
     while(password != clav):
         password = input("Contraseña incorrecta: ").lower().strip()
     return True
-#---------------------------------------------
 
+
+
+
+#modulo de registro
 #listo, revisar detalles en funcionamiento ya
 def r_valor():
     print(" ")
     print("     Seccion dolar diario")
-    clp = float(input("valor del dolar en moneda nacional: "))
+    clp = float(s_input("valor del dolar en moneda nacional: "))
     return clp
 
 #revisada y funcionando
@@ -103,12 +152,12 @@ def r_prove():
         fono = int(s_input("numero de telefono: +"))
         prov['tel'] = fono
 
-        mail = s_input("correo electronico")
-        mail = mail.__contains__("@") == True
-        while(mail == False):
+        mail = s_input("correo electronico: ")
+        vmail = mail.__contains__("@") == True
+        while(vmail == False):
             print("mail invalido ('@')")
-            mail = s_input("correo electronico")
-            mail = mail.__contains__("@") == True
+            mail = s_input("correo electronico: ")
+            vmail = mail.__contains__("@") == True
         prov['cor'] = mail
 
         provee.append(prov)
@@ -162,38 +211,51 @@ def r_elec():
             if (opc.__contains__("n") or opc.__contains__("no")):
                 break
 
-def lis_provee():
-    print("listar proveedores")
 
+
+
+#modulo de listado
+def lis_provee():
+
+    for x in provee:
+        print("codigo proveedor:",x['cod'])
+        print("nombre:          ",x['nom'])
+        print("pais:            ",x['pai'])
+        print("direccion:       ",x['dir'])
+        print("telefono:        ",x['tel'])
+        print("correo:          ",x['cor'])
+        print(" ")
 #listo el esquema
 def lis_electro():
     while(True):
         print("i.   Listar por tipo de Electrodomestico")
         print("ii.  Listar todo")
         print("iii. Volver a menu anterior")
-        elec = s_input("Elija una opcion: ").lower().strip()
+        elec = s_input("Elija una opcion: ")
         if (elec.__contains__("i") or elec.__contains__("1")):
-            print("a) Computador")
-            print("b) Camara Fotográfica")
-            print("c) Drone")
-            tipo = s_input("Categoria a buscar:").lower().strip()
-            #if(tipo.__contains__(tipo)):
-            #for tip in list_electr:
-                #print("----------------------------------")
-                #print("            informacion:")
-                #print("Codigo:          "tip['cod'])
-                #print("Nombre:          "tip['nom'])
-                #print("Categoria:       "tip['cate'])
-                #print("Marca:           "tip['mar'])
-                #print("Modelo:          "tip['mod'])
-                #print(" ")
-                #print("----------------------------------")
-                #print("            precios: ")
-                #print("local:          $"tip['pre_l'])
+            tipo = categoria()
+
+            if(productos.__contains__(tipo)):
+                for tipo in productos:
+                    print("----------------------------------")
+                    print("            informacion:")
+                    print("Codigo:          ",tipo['cod'])
+                    print("Nombre:          ",tipo['nom'])
+                    print("Categoria:       ",tipo['cate'])
+                    print("Marca:           ",tipo['mar'])
+                    print("Modelo:          ",tipo['mode'])
+                    print(" ")
+                    print("----------------------------------")
+                    print("            precios: ")
+                    print("local:          $",tipo['prec'],"usd")#borrar usd luego
+            else:
+                print("uvu")
+
+
            #definir funcion
-                #print("arancel importacion:    "tip['aran'])
-                #print("costo transporte:       "tip['cost'])
-                #print(""tip['pre_n'])
+                #print("arancel importacion:    ",tip['aran'])
+                #print("costo transporte:       ",tip['cost'])
+                #print("",tip['pre_n'])
                 #print(tip['iva'])
                 #print(tip['pre_f'])
                 #print(tip['can'])
@@ -225,6 +287,8 @@ def lis_electro():
         else:
             print("No es una opcion valida!!")
 
+
+#borrar post
 def test():
     clp = r_valor()
     test = float(input("ingrese el dinero a convertir: "))
@@ -233,17 +297,20 @@ def test():
     us = round(us,2)
     print(us)
 
+#verificador
 def veri_cod():
     for x in provee:
         cod_p = x['cod']
         return cod_p
 
+
+#categorias de los productos
 def categoria():
-    print("     categorias")
+    print("   categorias")
     print("a) computador")
     print("b) camara fotografica")
     print("c) drone")
-    op = s_input("eliga el tipo: ").lower().strip()
+    op = s_input("eliga el tipo: ")
     if(op.__contains__("a") or op.__contains__("computador") or op.__contains__("1")):
         return ("computador")
     if(op.__contains__("b") or op.__contains__("camara") or op.__contains__("2")):
@@ -251,6 +318,7 @@ def categoria():
     if (op.__contains__("c") or op.__contains__("drone") or op.__contains__("3")):
         return ("drone")
 
+#procedencias, revisado y confirmado
 def procedencia():
     print("     procedencia")
     print("a) America")
