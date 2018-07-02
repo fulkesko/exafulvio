@@ -119,8 +119,6 @@ def inicio(): #mejorar pero sirve de beta1
     return True
 
 
-
-
 #modulo de registro
 #listo, revisar detalles en funcionamiento ya
 def r_valor():
@@ -138,6 +136,14 @@ def r_prove():
         print(" ")
 
         cod = s_input("codigo: ")
+        cod_pro = veri_cod_prodc(cod)
+        cod_prove = veri_cod_prove(cod)
+        while(cod_prove == True or cod_pro == True):
+            print("Ingrese: ")
+            cod = s_input("codigo valido: ")
+            cod_pro = veri_cod_prove(cod)
+            cod_prove = veri_cod_prove(cod)
+
         prov['cod'] = cod
 
         nom = s_input("nombre: ")
@@ -161,11 +167,10 @@ def r_prove():
         prov['cor'] = mail
 
         provee.append(prov)
-        op = input("¿Desea registrar otro proveedor? s/n").lower().strip()
+        op = s_input("¿Desea registrar otro proveedor? s/n: ")
         if (op.__contains__("n")):
             break
-        while(op == ""):
-            op = input("ingrese una opcion valida")
+
 
 #revisada y correcta funcion
 def r_elec():
@@ -174,11 +179,15 @@ def r_elec():
             print("")
             print("     registro de producto electronico: ")
             print("")
-            cod = input("codigo: ").lower().strip()
-            cod_p = veri_cod()
-            while(cod == "" or cod == cod_p):
+            cod = s_input("codigo: ")
+            cod_pro = veri_cod_prodc(cod)
+            cod_prov = veri_cod_prove(cod)
+            while(cod_prov == True or cod_pro == True):
                 print("ingrese  ")
-                cod = input("codigo valido: ")
+                cod = s_input("codigo valido: ")
+                cod_pro = veri_cod_prodc(cod)
+                cod_prov = veri_cod_prove(cod)
+
             p_ele['cod'] = cod
 
             nom = s_input("nombre: ").lower().strip()
@@ -216,7 +225,6 @@ def r_elec():
 
 #modulo de listado
 def lis_provee():
-
     for x in provee:
         print("codigo proveedor:",x['cod'])
         print("nombre:          ",x['nom'])
@@ -225,7 +233,8 @@ def lis_provee():
         print("telefono:        ",x['tel'])
         print("correo:          ",x['cor'])
         print(" ")
-#listo el esquema
+
+#listo
 def lis_electro():
     while(True):
         print("i.   Listar por tipo de Electrodomestico")
@@ -235,22 +244,19 @@ def lis_electro():
         if (elec.__contains__("i") or elec.__contains__("1")):
             tipo = categoria()
 
-            if(productos.__contains__(tipo)):
-                for tipo in productos:
+            for tip in productos:
+                if(tip['cate'] == tipo):
                     print("----------------------------------")
                     print("            informacion:")
-                    print("Codigo:          ",tipo['cod'])
-                    print("Nombre:          ",tipo['nom'])
-                    print("Categoria:       ",tipo['cate'])
-                    print("Marca:           ",tipo['mar'])
-                    print("Modelo:          ",tipo['mode'])
+                    print("Codigo:          ",tip['cod'])
+                    print("Nombre:          ",tip['nom'])
+                    print("Categoria:       ",tip['cate'])
+                    print("Marca:           ",tip['mar'])
+                    print("Modelo:          ",tip['mode'])
                     print(" ")
                     print("----------------------------------")
                     print("            precios: ")
-                    print("local:          $",tipo['prec'],"usd")#borrar usd luego
-            else:
-                print("uvu")
-
+                    print("local:          $",tip['prec'],"usd")
 
            #definir funcion
                 #print("arancel importacion:    ",tip['aran'])
@@ -261,47 +267,46 @@ def lis_electro():
                 #print(tip['can'])
           #print("----------------------------------")
         elif(elec.__contains__("ii") or elec.__contains__("2")):
-            pass
-            #if(tipo.__contains__(tipo)):
-            #for tip in list_electr:
-            #print("----------------------------------")
-            #print("            informacion:")
-            #print("Codigo:          "tip['cod'])
-            #print("Nombre:          "tip['nom'])
-            #print("Categoria:       "tip['cate'])
-            #print("Marca:           "tip['mar'])
-            #print("Modelo:          "tip['mod'])
-            #print(" ")
-            #print("----------------------------------")
-            #print("            precios: ")
-            #print("local:          $"tip['pre_l'])
-            #print("arancel importacion:    "tip['aran'])
-            #print("costo transporte:       "tip['cost'])
-            #print(""tip['pre_n'])
-            #print(tip['iva'])
-            #print(tip['pre_f'])
-            #print(tip['can'])
-            #print("----------------------------------")
+
+            for tip in productos:
+                print("----------------------------------")
+                print("            informacion:")
+                print("Codigo:          ",tip['cod'])
+                print("Nombre:          ",tip['nom'])
+                print("Categoria:       ",tip['cate'])
+                print("Marca:           ",tip['mar'])
+                print("Modelo:          ",tip['mode'])
+                print(" ")
+                print("----------------------------------")
+                print("            precios: ")
+                #print("local:          $",tip['pre_l'])
+                #print("arancel importacion:    ",tip['aran'])
+                #print("costo transporte:       ",tip['cost'])
+                #print(""tip['pre_n'])
+                #print(tip['iva'])
+                #print(tip['pre_f'])
+                #print(tip['can'])
+                #print("----------------------------------")
         elif(elec.__contains__("iii") or elec.__contains__("3")):
             break
         else:
             print("No es una opcion valida!!")
 
 
-#borrar post
-def test():
-    clp = r_valor()
-    test = float(input("ingrese el dinero a convertir: "))
 
-    us = test / clp
-    us = round(us,2)
-    print(us)
 
 #verificador
-def veri_cod():
+def veri_cod_prove(cod):
     for x in provee:
+        cod_pr = x['cod']
+        if (cod_pr == cod):
+            return True
+
+def veri_cod_prodc(cod):
+    for x in productos:
         cod_p = x['cod']
-        return cod_p
+        if (cod_p == cod):
+            return True
 
 
 #categorias de los productos

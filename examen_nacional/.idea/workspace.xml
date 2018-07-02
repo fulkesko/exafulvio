@@ -16,19 +16,23 @@
           <file leaf-file-name="funciones.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/funciones.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3519">
-                  <caret line="312" column="35" selection-start-line="312" selection-start-column="35" selection-end-line="312" selection-end-column="35" />
+                <state relative-caret-position="396">
+                  <caret line="339" lean-forward="true" selection-start-line="339" selection-end-line="339" />
                   <folding>
+                    <element signature="e#128#1056#0" />
                     <element signature="e#1088#1609#0" />
                     <element signature="e#574#836#0" />
                     <element signature="e#914#1021#0" />
                     <element signature="e#1126#1203#0" />
                     <element signature="e#1222#1299#0" />
                     <element signature="e#1348#1763#0" />
-                    <element signature="e#1877#2004#0" />
-                    <element signature="e#3073#4270#0" />
-                    <element signature="e#6978#7108#0" />
-                    <element signature="e#7130#7192#0" />
+                    <element signature="e#3167#4068#0" />
+                    <element signature="e#4110#5357#0" />
+                    <element signature="e#5432#5740#0" />
+                    <element signature="e#5783#8408#0" />
+                    <element signature="e#8500#8594#0" />
+                    <element signature="e#8629#8725#0" />
+                    <element signature="e#7215#7721#0" />
                     <element signature="e#7746#8219#0" />
                   </folding>
                 </state>
@@ -47,8 +51,8 @@
           <file leaf-file-name="vacio.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/vacio.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+                <state relative-caret-position="136">
+                  <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
                 </state>
               </provider>
             </entry>
@@ -60,24 +64,28 @@
           <file leaf-file-name="funciones.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/funciones.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="84">
-                  <caret line="237" column="24" selection-start-line="237" selection-start-column="24" selection-end-line="237" selection-end-column="24" />
+                <state relative-caret-position="459">
+                  <caret line="277" column="14" lean-forward="true" selection-start-line="277" selection-start-column="14" selection-end-line="277" selection-end-column="14" />
                   <folding>
-                    <element signature="e#1088#1609#0" />
                     <element signature="e#1152#1430#0" />
                     <element signature="e#1508#1615#0" />
                     <element signature="e#1720#1797#0" />
                     <element signature="e#1816#1893#0" />
                     <element signature="e#1942#2357#0" />
                     <element signature="e#2471#2600#0" />
-                    <element signature="e#2645#3616#0" />
-                    <element signature="e#3669#4866#0" />
                     <element signature="e#5432#5736#0" />
-                    <element signature="e#7587#7717#0" />
-                    <element signature="e#7752#7814#0" />
                     <element signature="e#7866#8372#0" />
                     <element signature="e#8433#8906#0" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../clases_estructura_2018/AppMenu/main.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="379">
+                  <caret line="115" column="25" lean-forward="true" selection-start-line="115" selection-start-column="25" selection-end-line="115" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
@@ -196,13 +204,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09443631" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18897638" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13543308" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -223,17 +231,24 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/funciones.py</url>
-          <line>237</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="20" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../../clases_estructura_2018/AppMenu/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="115" column="25" lean-forward="true" selection-start-line="115" selection-start-column="25" selection-end-line="115" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vacio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
@@ -241,32 +256,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vacio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/funciones.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="237" column="24" selection-start-line="237" selection-start-column="24" selection-end-line="237" selection-end-column="24" />
+        <state relative-caret-position="396">
+          <caret line="339" lean-forward="true" selection-start-line="339" selection-end-line="339" />
           <folding>
+            <element signature="e#128#1056#0" />
             <element signature="e#1088#1609#0" />
-            <element signature="e#1152#1430#0" />
-            <element signature="e#1508#1615#0" />
-            <element signature="e#1720#1797#0" />
-            <element signature="e#1816#1893#0" />
-            <element signature="e#1942#2357#0" />
-            <element signature="e#2471#2600#0" />
-            <element signature="e#2645#3616#0" />
-            <element signature="e#3669#4866#0" />
-            <element signature="e#5432#5736#0" />
-            <element signature="e#7587#7717#0" />
-            <element signature="e#7752#7814#0" />
-            <element signature="e#7866#8372#0" />
-            <element signature="e#8433#8906#0" />
+            <element signature="e#574#836#0" />
+            <element signature="e#914#1021#0" />
+            <element signature="e#1126#1203#0" />
+            <element signature="e#1222#1299#0" />
+            <element signature="e#1348#1763#0" />
+            <element signature="e#3167#4068#0" />
+            <element signature="e#4110#5357#0" />
+            <element signature="e#5432#5740#0" />
+            <element signature="e#5783#8408#0" />
+            <element signature="e#8500#8594#0" />
+            <element signature="e#8629#8725#0" />
+            <element signature="e#7215#7721#0" />
+            <element signature="e#7746#8219#0" />
           </folding>
         </state>
       </provider>
