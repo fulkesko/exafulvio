@@ -10,17 +10,19 @@ while (apro == True):
     print("     Menu Principal")
     opcion = menu_principal().lower().strip()
     print(" ")
-    if(opcion.__contains__("a")):
+    if(opcion == "a"):
         r_valor()
-    elif(opcion.__contains__("b")):
+    elif(opcion == "b"):
         r_prove()
-    elif(opcion.__contains__("c")):
+    elif(opcion == "c"):
         r_elec()
-    elif(opcion.__contains__("d")):
+    elif(opcion == "d"):
         lis_provee()
-    elif(opcion.__contains__("e")):
-        lis_electro()
+    elif(opcion == "e"):
+        len = usd_clp.__len__()
+        if(len == 0):
+            print("aun no define usd en peso nacional")
+        if(len != 0):
+            lis_electro()
     else:
         print("ingrese una opcion valida!!: ")
-
-

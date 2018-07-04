@@ -1,10 +1,10 @@
-#flavio toro
-#santo tomas
+# flavio toro
+# santo tomas
 from vacio import *
 sesion = list()
 productos = list()
 provee = list()
-
+usd_clp = list()
 #bases iniciales
 def base_inicial_produ():
     proc = dict()
@@ -14,8 +14,8 @@ def base_inicial_produ():
     proc['cate'] = "computador"
     proc['mar'] = "Lenovo"
     proc['mode'] = "Z470"
-    proc['from'] = "Asia"
-    proc['prec'] = 150
+    proc['from'] = "Europa"
+    proc['prec'] = 1500
     proc['cant'] = 4
     proc['prov'] = "Lenovo S.A"
 
@@ -29,7 +29,7 @@ def base_inicial_produ():
     proc['mar'] = "JJRC"
     proc['mode'] = "H20"
     proc['from'] = "Asia"
-    proc['prec'] = 150000
+    proc['prec'] = 1650
     proc['cant'] = 7
     proc['prov'] = "JianJian"
 
@@ -37,13 +37,13 @@ def base_inicial_produ():
 
     proc = dict()
     n_cod += 1
-    proc['cod'] = "cod"+str(n_cod)
+    proc['cod'] = "cod_"+str(n_cod)
     proc['nom'] = "Canon T6"
     proc['cate'] = "camara"
     proc['mar'] = "Canon"
     proc['mode'] = "T6"
     proc['from'] = "America"
-    proc['prec'] = 449990
+    proc['prec'] = 640
     proc['cant'] = 9
     proc['prov'] = "Falabella"
 
@@ -52,7 +52,7 @@ def base_inicial_produ():
 def base_inicial_prove():
     prov = dict()
     code = 1
-    prov['cod'] = "Prove_"+str(code)
+    prov['cod'] = "prove_"+str(code)
     prov['nom'] = "Fulvio"
     prov['pai'] = "Chile"
     prov['dir'] = "Vivanco #1387"
@@ -63,7 +63,7 @@ def base_inicial_prove():
 
     prov = dict()
     code +=1
-    prov['cod'] = "Prove_"+str(code)
+    prov['cod'] = "prove_"+str(code)
     prov['nom'] = "Lucas"
     prov['pai'] = "Chile"
     prov['dir'] = "Ventisquero palomo"
@@ -125,7 +125,32 @@ def r_valor():
     print(" ")
     print("     Seccion dolar diario")
     clp = float(s_input("valor del dolar en moneda nacional: "))
-    return clp
+    usd_clp.append(clp)
+
+
+def arancel(tipo):
+    var = tipo
+    if(var == "computador"):
+        ara = 0.03
+        return ara
+    if(var == "camara"):
+        ara = 0.05
+        return ara
+    if(var == "drone"):
+        ara = 0.04
+        return ara
+
+def cost_trans(desde):
+    var = desde
+    if (var == "Asia"):
+        ara = 0.07
+        return ara
+    if (var == "America"):
+        ara = 0.1
+        return ara
+    if (var == "Europa"):
+        ara = 0.14
+        return ara
 
 #revisada y funcionando
 def r_prove():
@@ -135,15 +160,14 @@ def r_prove():
         print("     Registro de proveedores")
         print(" ")
 
-        cod = s_input("codigo: ")
-        cod_pro = veri_cod_prodc(cod)
-        cod_prove = veri_cod_prove(cod)
-        while(cod_prove == True or cod_pro == True):
-            print("Ingrese: ")
-            cod = s_input("codigo valido: ")
-            cod_pro = veri_cod_prove(cod)
+        while(True):
+            cod = s_input("codigo: ")
+            cod_pro = veri_cod_prodc(cod)
             cod_prove = veri_cod_prove(cod)
-
+            if(cod_prove != True and cod_pro != True):
+                break
+            else:
+                print("ingrese ")
         prov['cod'] = cod
 
         nom = s_input("nombre: ")
@@ -168,7 +192,10 @@ def r_prove():
 
         provee.append(prov)
         op = s_input("¿Desea registrar otro proveedor? s/n: ")
-        if (op.__contains__("n")):
+        while (op != "n" and op != "s"):
+            print("ingrese una opcion valida: ")
+            op = s_input("desea registrar otro proveedor? s/n: ")
+        if (op == "n"):
             break
 
 
@@ -217,7 +244,10 @@ def r_elec():
             productos.append(p_ele)
 
             opc = s_input("desea registrar otro producto? s/n: ")
-            if (opc.__contains__("n") or opc.__contains__("no")):
+            while(opc != "n" and opc != "s" ):
+                print("ingrese una opcion valida: ")
+                opc = s_input("desea registrar otro producto? s/n: ")
+            if (opc == "n"):
                 break
 
 
@@ -241,7 +271,7 @@ def lis_electro():
         print("ii.  Listar todo")
         print("iii. Volver a menu anterior")
         elec = s_input("Elija una opcion: ")
-        if (elec.__contains__("i") or elec.__contains__("1")):
+        if (elec == "i" or elec == "1"):
             tipo = categoria()
 
             for tip in productos:
@@ -256,20 +286,46 @@ def lis_electro():
                     print(" ")
                     print("----------------------------------")
                     print("            precios: ")
-                    print("local:          $",tip['prec'],"usd")
+                    usd_p = tip['prec']
+                    for x in usd_clp:
+                        pesos = x
+                    peso = pesos
+                    valor_naci = usd_p * peso
+                    valor_naci = round(valor_naci)
+                    print("precio local:                  $",valor_naci)
+                    # arancel
+                    tipo = tip['cate']
+                    ara = arancel(tipo)
+                    ara_tipo = valor_naci * ara
+                    ara_tipo = round(ara_tipo)
+                    print("arancel importacion:           $",ara_tipo)
 
-           #definir funcion
-                #print("arancel importacion:    ",tip['aran'])
-                #print("costo transporte:       ",tip['cost'])
-                #print("",tip['pre_n'])
-                #print(tip['iva'])
-                #print(tip['pre_f'])
-                #print(tip['can'])
-          #print("----------------------------------")
-        elif(elec.__contains__("ii") or elec.__contains__("2")):
+                    #costo transporte
+                    desde = tip['from']
+                    impo = cost_trans(desde)
+                    costo_t = impo * valor_naci
+                    costo_t = round(costo_t)
+                    print("costo transporte:              $",costo_t)
+                    # valor neto
+                    neto = valor_naci + ara_tipo + costo_t
+                    print("valor neto:                    $",neto)
+                    #~iva
+                    iva = neto * 0.19
+                    iva = round(iva)
+                    print("IVA:                           $",iva)
+                    #precio final
+                    pre_final = neto + iva
+                    print("precio final unitario:         $",pre_final)
+                    print("cantidad:                       ",tip['cant'])
+                    canti = tip['cant']
+                    pre_final_final = canti * pre_final
+                    print("precio total:                  $",pre_final_final)
+                    print("-----------------------------------------")
+
+        elif(elec == "ii" or elec == "2"):
 
             for tip in productos:
-                print("----------------------------------")
+                print("-----------------------------------------")
                 print("            informacion:")
                 print("Codigo:          ",tip['cod'])
                 print("Nombre:          ",tip['nom'])
@@ -277,16 +333,44 @@ def lis_electro():
                 print("Marca:           ",tip['mar'])
                 print("Modelo:          ",tip['mode'])
                 print(" ")
-                print("----------------------------------")
+                print("-----------------------------------------")
                 print("            precios: ")
-                #print("local:          $",tip['pre_l'])
-                #print("arancel importacion:    ",tip['aran'])
-                #print("costo transporte:       ",tip['cost'])
-                #print(""tip['pre_n'])
-                #print(tip['iva'])
-                #print(tip['pre_f'])
-                #print(tip['can'])
-                #print("----------------------------------")
+                usd_p = tip['prec']
+                for x in usd_clp:
+                    pesos = x
+
+                peso = pesos
+                valor_naci = usd_p * peso
+                valor_naci = round(valor_naci)
+                print("precio local:                  $", valor_naci)
+                # arancel
+                tipo = tip['cate']
+                ara = arancel(tipo)
+                ara_tipo = valor_naci * ara
+                ara_tipo = round(ara_tipo)
+                print("arancel importacion:           $", ara_tipo)
+
+                # costo transporte
+                desde = tip['from']
+                impo = cost_trans(desde)
+                costo_t = impo * valor_naci
+                costo_t = round(costo_t)
+                print("costo transporte:              $", costo_t)
+                # valor neto
+                neto = valor_naci + ara_tipo + costo_t
+                print("valor neto:                    $", neto)
+                # ~iva
+                iva = neto * 0.19
+                iva = round(iva)
+                print("IVA:                           $", iva)
+                # precio final
+                pre_final = neto + iva
+                print("precio final unitario:         $", pre_final)
+                print("cantidad:                       ", tip['cant'])
+                canti = tip['cant']
+                pre_final_final = canti * pre_final
+                print("precio total:                  $", pre_final_final)
+                print("-----------------------------------------")
         elif(elec.__contains__("iii") or elec.__contains__("3")):
             break
         else:
@@ -297,15 +381,17 @@ def lis_electro():
 
 #verificador
 def veri_cod_prove(cod):
+    codi = cod
     for x in provee:
         cod_pr = x['cod']
-        if (cod_pr == cod):
+        if (cod_pr == codi):
             return True
 
 def veri_cod_prodc(cod):
+    codi = cod
     for x in productos:
         cod_p = x['cod']
-        if (cod_p == cod):
+        if (cod_p == codi):
             return True
 
 
@@ -315,13 +401,14 @@ def categoria():
     print("a) computador")
     print("b) camara fotografica")
     print("c) drone")
-    op = s_input("eliga el tipo: ")
-    if(op.__contains__("a") or op.__contains__("computador") or op.__contains__("1")):
-        return ("computador")
-    if(op.__contains__("b") or op.__contains__("camara") or op.__contains__("2")):
-        return ("camara fotografica")
-    if (op.__contains__("c") or op.__contains__("drone") or op.__contains__("3")):
-        return ("drone")
+    while (True):
+        op = s_input("eliga el tipo: ")
+        if(op == "a" or op.__contains__("computador") or op.__contains__("1")):
+          return ("computador")
+        if(op == "b" or op.__contains__("camara") or op.__contains__("2")):
+          return ("camara")
+        if (op == "c" or op.__contains__("drone") or op.__contains__("3")):
+          return ("drone")
 
 #procedencias, revisado y confirmado
 def procedencia():
@@ -329,11 +416,12 @@ def procedencia():
     print("a) America")
     print("b) Asia")
     print("c) Europa")
-    op = s_input("eliga el tipo: ").lower().strip()
-    if (op.__contains__("a") or op.__contains__("america") or op.__contains__("1")):
-        return ("America")
-    if (op.__contains__("b") or op.__contains__("asia") or op.__contains__("2")):
-        return ("Asia")
-    if (op.__contains__("c") or op.__contains__("europa") or op.__contains__("3")):
-        return ("Europa")
+    while(True):
+        op = s_input("eliga alternativa: ").lower().strip()
+        if (op == "a" or op.__contains__("america") or op.__contains__("1")):
+            return ("America")
+        if (op == "b" or op.__contains__("asia") or op.__contains__("2")):
+            return ("Asia")
+        if (op == "c" or op.__contains__("europa") or op.__contains__("3")):
+            return ("Europa")
 
