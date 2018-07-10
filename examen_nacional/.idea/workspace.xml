@@ -10,67 +10,35 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49024707">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/main.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4">
-                  <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="funciones.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/funciones.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1479">
-                  <caret line="142" selection-start-line="142" selection-end-line="142" />
-                  <folding>
-                    <element signature="e#1105#1618#0" />
-                    <element signature="e#1695#1973#0" />
-                    <element signature="e#2053#2160#0" />
-                    <element signature="e#2266#2343#0" />
-                    <element signature="e#2362#2439#0" />
-                    <element signature="e#2488#2903#0" />
-                    <element signature="e#3009#3144#0" />
-                    <element signature="e#3165#4493#0" />
-                    <element signature="e#4547#6023#0" />
-                    <element signature="e#6069#6368#0" />
-                    <element signature="e#6891#9885#0" />
-                    <element signature="e#9169#9664#0" />
-                    <element signature="e#9726#10215#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="vacio.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/vacio.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="8" selection-start-line="8" selection-end-line="8" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="funciones.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/funciones.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="5780">
-                  <caret line="340" selection-start-line="340" selection-end-line="340" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="funciones.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/funciones.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-493">
+              <caret line="142" selection-start-line="142" selection-end-line="142" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vacio.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vacio.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -93,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="694" />
     <option name="height" value="735" />
@@ -103,7 +71,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -115,6 +82,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -132,7 +100,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.pruebas">
+  <component name="RunManager" selected="Python.main">
     <configuration name="funciones" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="examen_nacional" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -236,16 +204,16 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.04632353" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12720588" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.27244094" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.96692914" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="1.0" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -271,6 +239,27 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/funciones.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2414">
+          <caret line="142" selection-start-line="142" selection-end-line="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vacio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
         </state>
@@ -287,21 +276,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3077">
           <caret line="250" column="26" selection-start-line="250" selection-start-column="26" selection-end-line="250" selection-end-column="26" />
-          <folding>
-            <element signature="e#1105#1618#0" />
-            <element signature="e#1695#1973#0" />
-            <element signature="e#2053#2160#0" />
-            <element signature="e#2266#2343#0" />
-            <element signature="e#2362#2439#0" />
-            <element signature="e#2488#2903#0" />
-            <element signature="e#3009#3144#0" />
-            <element signature="e#3165#4493#0" />
-            <element signature="e#4547#6023#0" />
-            <element signature="e#6069#6368#0" />
-            <element signature="e#6891#9885#0" />
-            <element signature="e#9169#9664#0" />
-            <element signature="e#9726#10215#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -328,6 +302,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../clases_estructura_2018/AppMenu/main.py" />
     <entry file="file://$PROJECT_DIR$/../../../Examen/main.py" />
+    <entry file="file://$PROJECT_DIR$/pruebas.py" />
     <entry file="file://$PROJECT_DIR$/vacio.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -335,39 +310,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pruebas.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/codigo no repetido.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/funciones.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
+        <state relative-caret-position="-493">
           <caret line="142" selection-start-line="142" selection-end-line="142" />
-          <folding>
-            <element signature="e#1105#1618#0" />
-            <element signature="e#1695#1973#0" />
-            <element signature="e#2053#2160#0" />
-            <element signature="e#2266#2343#0" />
-            <element signature="e#2362#2439#0" />
-            <element signature="e#2488#2903#0" />
-            <element signature="e#3009#3144#0" />
-            <element signature="e#3165#4493#0" />
-            <element signature="e#4547#6023#0" />
-            <element signature="e#6069#6368#0" />
-            <element signature="e#6891#9885#0" />
-            <element signature="e#9169#9664#0" />
-            <element signature="e#9726#10215#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        <state>
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
